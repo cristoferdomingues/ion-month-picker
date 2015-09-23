@@ -1,0 +1,27 @@
+<style>
+    #ionSelectModalContent .item-input {
+        padding: 16px;
+    }
+    
+    #ionSelectModalContent .button {
+        width: 40px;
+    }
+    
+    #ionSelectModalContent .item-stacked-label .input-label,
+    .item-stacked-label .icon {
+        display: inline-block;
+        padding: 4px 0 0 0px;
+        vertical-align: initial;
+    }
+</style>
+<div id="ionSelectModalContent" ng-click="openPopup()">
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">{{label}}</span>
+        <div class="item item-input-inset">
+            <label class="item-input-wrapper"><i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-disabled="true" ng-model="ngModel" />
+            </label>
+            <button class="button button-small icon ion-close-circled" ng-disabled="!ngModel" ng-mousedown="resetInput()"></button>
+        </div>
+    </label>
+</div>

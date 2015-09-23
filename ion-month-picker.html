@@ -1,0 +1,28 @@
+<style>
+.month-row{
+  width: 100%; display: block;
+}
+.month-col{
+  float: left;
+  width: 33%;
+  font-size: 12px;
+  text-align: center;
+  height:70px;
+  border:1px solid #ddd;
+      padding: 25px;
+}
+
+.selected{
+  background-color:#387ef5;
+  color:white;
+}
+
+</style>
+<div class="row">
+  <div class="col-10"><a class="button icon-left ion-chevron-left button-clear button-dark" ng-click="prev(currentDate.year)"></a></div>
+  <div class="col-80 text-center">{{currentDate.year}}</div>
+  <div class="col-10"> <a class="button icon-left ion-chevron-right button-clear button-dark"  ng-click="next(currentDate.year)"></a> </div>
+</div>
+<div class="month-row">
+  <div ng-repeat="month in monthList" class="month-col" ng-class="{selected:$index == currentDate.month}" ng-click="setMonth($index)">{{month}}</div>
+</div>
